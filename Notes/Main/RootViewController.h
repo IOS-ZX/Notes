@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <YPTabBarController.h>
+#import "YPTabBarController.h"
 
 @interface RootViewController : YPTabBarController
 
