@@ -15,5 +15,6 @@
 #import "NSString+Width.h"
 #import "UIColor+Hex.h"
 #import <AVOSCloud/AVOSCloud.h>
+#import "FMDB.h"
 
 #endif /* PrefixHeader_pch */

@@ -16,8 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initView];
+}
+
+- (void)initView{
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"我";
+    UIBarButtonItem *back = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStyleDone target:self action:@selector(backView:)];
+    self.navigationItem.leftBarButtonItem = back;
+}
+
+- (void)backView:(UIBarButtonItem*)item{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

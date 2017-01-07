@@ -10,6 +10,7 @@
 #import "FriendViewController.h"
 #import "RecordViewController.h"
 #import "MeViewController.h"
+#import "BaseNavigationController.h"
 
 @interface RootViewController ()
 
@@ -30,11 +31,6 @@
     [super viewDidLoad];
     [self initView];
     [self makeContentView];
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,7 +70,7 @@
     
     RecordViewController *record = [[RecordViewController alloc]init];
     record.yp_tabItemTitle = @"笔记";
-    
+
     self.viewControllers = [NSMutableArray arrayWithObjects:record, friend, nil];
 }
 
@@ -83,8 +79,8 @@
 // 设置按钮
 - (void)goToSettingPage{
     MeViewController *me = [MeViewController new];
-    [self.navigationController setNavigationBarHidden:NO];
-    [self.navigationController pushViewController:me animated:YES];
+    BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:me];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 // 刷新按钮

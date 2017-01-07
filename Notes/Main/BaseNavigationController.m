@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.navigationBar setTintColor:[UIColor hexColor:@"00CCFF"]];
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor hexColor:@"00CCFF"]}];
 }
 
 - (void)didReceiveMemoryWarning {

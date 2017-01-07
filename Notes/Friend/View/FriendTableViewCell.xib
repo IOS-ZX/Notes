@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="FriendTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="用户" translatesAutoresizingMaskIntoConstraints="NO" id="bRy-gw-pcW">
+                        <rect key="frame" x="20" y="4" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="fMe-qh-D09"/>
+                            <constraint firstAttribute="width" constant="50" id="qGn-4m-Ecv"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="25"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fMe-qh-D09"/>
+                                <exclude reference="qGn-4m-Ecv"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="fMe-qh-D09"/>
+                                <include reference="qGn-4m-Ecv"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="487-1v-3er">
+                        <rect key="frame" x="77" y="8" width="206" height="43"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KH-Sp-nFW">
+                        <rect key="frame" x="290" y="20" width="20" height="20"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Qqm-nY-mM3"/>
+                            <constraint firstAttribute="width" constant="20" id="hHK-gb-DLc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Qqm-nY-mM3"/>
+                                <exclude reference="hHK-gb-DLc"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="Qqm-nY-mM3"/>
+                                <include reference="hHK-gb-DLc"/>
+                            </mask>
+                        </variation>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bRy-gw-pcW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="3fW-61-YsY"/>
+                    <constraint firstItem="2KH-Sp-nFW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JA4-Qe-yIa"/>
+                    <constraint firstAttribute="bottom" secondItem="487-1v-3er" secondAttribute="bottom" constant="8" id="Yus-zM-ENL"/>
+                    <constraint firstItem="bRy-gw-pcW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bv6-cD-SnB"/>
+                    <constraint firstItem="2KH-Sp-nFW" firstAttribute="leading" secondItem="487-1v-3er" secondAttribute="trailing" constant="7" id="eZQ-1E-m56"/>
+                    <constraint firstItem="487-1v-3er" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="fYK-QL-Xz2"/>
+                    <constraint firstItem="487-1v-3er" firstAttribute="leading" secondItem="bRy-gw-pcW" secondAttribute="trailing" constant="7" id="gSb-lF-kV7"/>
+                    <constraint firstItem="487-1v-3er" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="uVp-0b-6dM"/>
+                    <constraint firstAttribute="trailing" secondItem="2KH-Sp-nFW" secondAttribute="trailing" constant="10" id="zfd-99-Yq9"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="3fW-61-YsY"/>
+                        <exclude reference="bv6-cD-SnB"/>
+                        <exclude reference="Yus-zM-ENL"/>
+                        <exclude reference="fYK-QL-Xz2"/>
+                        <exclude reference="gSb-lF-kV7"/>
+                        <exclude reference="uVp-0b-6dM"/>
+                        <exclude reference="JA4-Qe-yIa"/>
+                        <exclude reference="eZQ-1E-m56"/>
+                        <exclude reference="zfd-99-Yq9"/>
+                    </mask>
+                </variation>
+                <variation key="widthClass=compact">
+                    <mask key="constraints">
+                        <include reference="3fW-61-YsY"/>
+                        <include reference="bv6-cD-SnB"/>
+                        <include reference="Yus-zM-ENL"/>
+                        <include reference="fYK-QL-Xz2"/>
+                        <include reference="gSb-lF-kV7"/>
+                        <include reference="uVp-0b-6dM"/>
+                        <include reference="JA4-Qe-yIa"/>
+                        <include reference="eZQ-1E-m56"/>
+                        <include reference="zfd-99-Yq9"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="headImage" destination="bRy-gw-pcW" id="j7N-9c-G8V"/>
+                <outlet property="name" destination="487-1v-3er" id="ojj-UB-kVG"/>
+                <outlet property="num" destination="JA4-Qe-yIa" id="kM6-mO-LRL"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="46"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="用户" width="32" height="32"/>
+    </resources>
+</document>
