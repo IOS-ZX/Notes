@@ -16,5 +16,6 @@
 #import "UIColor+Hex.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "FMDB.h"
+#import "Masonry.h"
 
 #endif /* PrefixHeader_pch */

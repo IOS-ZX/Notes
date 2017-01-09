@@ -12,4 +12,5 @@ target 'Notes' do
   pod 'AVOSCloudIM'
   pod 'YYText', '~> 1.0.7'
   pod 'FMDB'
+pod 'Masonry'
 end

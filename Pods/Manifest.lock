@@ -12,6 +12,7 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - Masonry (1.0.2)
   - TesseractOCRiOS (4.0.0)
   - YPTabBarController (2.2.3)
   - YYText (1.0.7)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - AVOSCloud
   - AVOSCloudIM
   - FMDB
+  - Masonry
   - TesseractOCRiOS (~> 4.0.0)
   - YPTabBarController (~> 2.2.3)
   - YYText (~> 1.0.7)
@@ -28,10 +30,11 @@ SPEC CHECKSUMS:
   AVOSCloud: aa4b75bd7de2f62431ec7acbf357a25a66499427
   AVOSCloudIM: 5ce9c6d38dfb60347aecfa2666829d73335b4541
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
   YPTabBarController: 2e0e97b2d9d4b28b722ecb57700b7cd4d1b38a47
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 9e027b35cdebe067b9cff67476a7e2093dd23b49
+PODFILE CHECKSUM: 31605c46654d18751a26979536ef46e3fb3f21f4
 
 COCOAPODS: 1.1.1
