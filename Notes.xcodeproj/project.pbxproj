@@ -17,9 +17,13 @@
 		245549661E2098E00072BE89 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2455495D1E2098E00072BE89 /* RootViewController.m */; };
 		245549671E2098E00072BE89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 245549611E2098E00072BE89 /* AppDelegate.m */; };
 		245549691E2098E00072BE89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 245549631E2098E00072BE89 /* main.m */; };
-		2455496E1E209C310072BE89 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2455496D1E209C310072BE89 /* RecordViewController.m */; };
 		245549761E20A9080072BE89 /* NSString+Width.m in Sources */ = {isa = PBXBuildFile; fileRef = 245549731E20A9080072BE89 /* NSString+Width.m */; };
 		245549771E20A9080072BE89 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 245549751E20A9080072BE89 /* UIColor+Hex.m */; };
+		247F79BA1E24CE440036E47C /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247F79B71E24CE440036E47C /* RecordViewController.m */; };
+		247F79BE1E24CEA80036E47C /* ImageDiscernment.m in Sources */ = {isa = PBXBuildFile; fileRef = 247F79BD1E24CEA80036E47C /* ImageDiscernment.m */; };
+		247F79C21E24D5610036E47C /* MainNotesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247F79C01E24D5610036E47C /* MainNotesCell.m */; };
+		247F79C31E24D5610036E47C /* MainNotesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247F79C11E24D5610036E47C /* MainNotesCell.xib */; };
+		247F79C61E24DA760036E47C /* MainTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 247F79C51E24DA760036E47C /* MainTableHeaderView.m */; };
 		2485706D1E20BED400189301 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 2485706C1E20BED400189301 /* tessdata */; };
 		248570701E20C9B300189301 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485706F1E20C9B300189301 /* MeViewController.m */; };
 		248570731E20CD7C00189301 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248570721E20CD7C00189301 /* BaseNavigationController.m */; };
@@ -63,13 +67,20 @@
 		245549621E2098E00072BE89 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		245549631E2098E00072BE89 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2455496A1E209A8C0072BE89 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		2455496C1E209C310072BE89 /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
-		2455496D1E209C310072BE89 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		245549721E20A9080072BE89 /* NSString+Width.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Width.h"; sourceTree = "<group>"; };
 		245549731E20A9080072BE89 /* NSString+Width.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Width.m"; sourceTree = "<group>"; };
 		245549741E20A9080072BE89 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		245549751E20A9080072BE89 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		247F79711E248D920036E47C /* Notes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notes.entitlements; sourceTree = "<group>"; };
+		247F79B61E24CE440036E47C /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		247F79B71E24CE440036E47C /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
+		247F79BC1E24CEA80036E47C /* ImageDiscernment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDiscernment.h; sourceTree = "<group>"; };
+		247F79BD1E24CEA80036E47C /* ImageDiscernment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDiscernment.m; sourceTree = "<group>"; };
+		247F79BF1E24D5610036E47C /* MainNotesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNotesCell.h; sourceTree = "<group>"; };
+		247F79C01E24D5610036E47C /* MainNotesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNotesCell.m; sourceTree = "<group>"; };
+		247F79C11E24D5610036E47C /* MainNotesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainNotesCell.xib; sourceTree = "<group>"; };
+		247F79C41E24DA760036E47C /* MainTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableHeaderView.h; sourceTree = "<group>"; };
+		247F79C51E24DA760036E47C /* MainTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableHeaderView.m; sourceTree = "<group>"; };
 		2485706C1E20BED400189301 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		2485706E1E20C9B300189301 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		2485706F1E20C9B300189301 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
@@ -216,8 +227,9 @@
 		245549641E2098E00072BE89 /* Record */ = {
 			isa = PBXGroup;
 			children = (
-				2455496C1E209C310072BE89 /* RecordViewController.h */,
-				2455496D1E209C310072BE89 /* RecordViewController.m */,
+				247F79B51E24CE440036E47C /* Controller */,
+				247F79B81E24CE440036E47C /* Model */,
+				247F79B91E24CE440036E47C /* View */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -225,6 +237,7 @@
 		245549651E2098E00072BE89 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				247F79BB1E24CE960036E47C /* Discernment */,
 				2485709B1E20F63500189301 /* IracleConfig.h */,
 				248570761E20D9EF00189301 /* DataTool */,
 			);
@@ -239,6 +252,43 @@
 				248570801E20E1FC00189301 /* View */,
 			);
 			path = Friend;
+			sourceTree = "<group>";
+		};
+		247F79B51E24CE440036E47C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				247F79B61E24CE440036E47C /* RecordViewController.h */,
+				247F79B71E24CE440036E47C /* RecordViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		247F79B81E24CE440036E47C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		247F79B91E24CE440036E47C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				247F79BF1E24D5610036E47C /* MainNotesCell.h */,
+				247F79C01E24D5610036E47C /* MainNotesCell.m */,
+				247F79C11E24D5610036E47C /* MainNotesCell.xib */,
+				247F79C41E24DA760036E47C /* MainTableHeaderView.h */,
+				247F79C51E24DA760036E47C /* MainTableHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		247F79BB1E24CE960036E47C /* Discernment */ = {
+			isa = PBXGroup;
+			children = (
+				247F79BC1E24CEA80036E47C /* ImageDiscernment.h */,
+				247F79BD1E24CEA80036E47C /* ImageDiscernment.m */,
+			);
+			path = Discernment;
 			sourceTree = "<group>";
 		};
 		248570761E20D9EF00189301 /* DataTool */ = {
@@ -416,6 +466,7 @@
 			files = (
 				2485708C1E20E7C600189301 /* FriendTableViewCell.xib in Resources */,
 				245549421E2095890072BE89 /* LaunchScreen.storyboard in Resources */,
+				247F79C31E24D5610036E47C /* MainNotesCell.xib in Resources */,
 				2485709A1E20F50300189301 /* messages.plist in Resources */,
 				2485706D1E20BED400189301 /* tessdata in Resources */,
 				2455493F1E2095890072BE89 /* Assets.xcassets in Resources */,
@@ -486,6 +537,7 @@
 				F33830F21E234C14005A4A81 /* Transition.m in Sources */,
 				F33830FB1E234C1C005A4A81 /* LoginViewController.m in Sources */,
 				244C84991E2366C800A04F0E /* GetUserFriend.m in Sources */,
+				247F79C21E24D5610036E47C /* MainNotesCell.m in Sources */,
 				245549671E2098E00072BE89 /* AppDelegate.m in Sources */,
 				245549771E20A9080072BE89 /* UIColor+Hex.m in Sources */,
 				248570941E20F3CD00189301 /* MessageCell.m in Sources */,
@@ -495,11 +547,13 @@
 				2485708B1E20E7C600189301 /* FriendTableViewCell.m in Sources */,
 				248570701E20C9B300189301 /* MeViewController.m in Sources */,
 				244C84D81E23B28100A04F0E /* ConversationModel.m in Sources */,
+				247F79C61E24DA760036E47C /* MainTableHeaderView.m in Sources */,
+				247F79BA1E24CE440036E47C /* RecordViewController.m in Sources */,
 				248570811E20E1FC00189301 /* FriendViewController.m in Sources */,
 				248570951E20F3CD00189301 /* UIImage+Resizingable.m in Sources */,
-				2455496E1E209C310072BE89 /* RecordViewController.m in Sources */,
 				248570931E20F3CD00189301 /* Message.m in Sources */,
 				F33830FD1E234C1C005A4A81 /* WelcomeViewController.m in Sources */,
+				247F79BE1E24CEA80036E47C /* ImageDiscernment.m in Sources */,
 				F33830FC1E234C1C005A4A81 /* SMSViewController.m in Sources */,
 				F33830F31E234C14005A4A81 /* WCButton.m in Sources */,
 				248570981E20F41600189301 /* ChatViewController.m in Sources */,
