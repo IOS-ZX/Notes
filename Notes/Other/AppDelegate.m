@@ -21,10 +21,11 @@
     
     // 初始化LeanCloud
     [AVOSCloud setApplicationId:@"mqAp0pG4arfinRa7f0OFSpnm-gzGzoHsz" clientKey:@"d5VqY4bxtfaeQLqTQVhG54XI"];
-    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     RootViewController *rootVC = [RootViewController new];
-    self.window.rootViewController = rootVC;
+    BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:rootVC];
+    nav.navigationBarHidden = YES;
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
 }

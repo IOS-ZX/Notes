@@ -11,11 +11,15 @@
 #import "ChatViewController.h"
 #import "BaseNavigationController.h"
 #import "FriendSQLiteManager.h"
+#import "GetUserFriend.h"
 
-@interface FriendViewController ()
+@interface FriendViewController ()<AVIMClientDelegate>
 
 /** 好友列表 **/
 @property(nonatomic,strong)NSArray *friends;
+
+/** client **/
+@property(nonatomic,strong)AVIMClient *client;
 
 @end
 
@@ -24,46 +28,82 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initView];
+    [self requestData];
+    if (self.friends.count == 0) {
+        [self requestData];
+    }
 }
 
 - (void)initView{
     self.view.backgroundColor = [UIColor hexColor:@"f1f2f3"];
     [self.tableView registerNib:[UINib nibWithNibName:@"FriendTableViewCell" bundle:nil] forCellReuseIdentifier:@"FriendTableViewCell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+}
+
+- (void)requestData{
+    __weak typeof(self) weakSelf = self;
+    [GetUserFriend requestFriendData:^(NSArray *arr) {
+        weakSelf.friends = arr;
+        [weakSelf.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - 接受消息
+- (void)conversation:(AVIMConversation *)conversation didReceiveTypedMessage:(AVIMTypedMessage *)message {
+    NSLog(@"%@", message.text); // 耗子，起床！
+}
+
 #pragma mark - tableView dataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    NSLog(@"count:%ld",(unsigned long)self.friends.count);
     return self.friends.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 60;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     FriendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FriendTableViewCell" forIndexPath:indexPath];
-    cell.name.text = @"aaa";
+    FriendModel *model = self.friends[indexPath.row];
+    cell.name.text = model.uname;
+    NSURL *url = [NSURL URLWithString:model.img];
+    [cell.headImage sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"用户"]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    FriendModel *model = self.friends[indexPath.row];
     ChatViewController *chat = [ChatViewController new];
+    chat.model = model;
     BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:chat];
     [self presentViewController:nav animated:YES completion:nil];
 }
+
+#pragma mark - 懒加载
 
 - (NSArray *)friends{
     if (!_friends) {
         _friends = [[FriendSQLiteManager sheardManager] selectAllData];
     }
     return _friends;
+}
+
+- (AVIMClient *)client{
+    if (!_client) {
+        _client = [[AVIMClient alloc]initWithClientId:[AVUser currentUser].objectId];
+        _client.delegate = self;
+    }
+    return _client;
 }
 
 @end

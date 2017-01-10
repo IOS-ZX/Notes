@@ -22,10 +22,13 @@
 // 删除数据
 - (BOOL)deleteData:(FriendModel*)model;
 
+// 删除所有数据
+- (BOOL)deleteAllData;
+
 // 查询所有
 - (NSArray *)selectAllData;
 
 // 查询一条
-- (FriendModel *)selectById:(NSNumber*)fid;
+- (FriendModel *)selectById:(NSNumber*)mid;
 
 @end

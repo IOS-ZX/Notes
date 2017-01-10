@@ -16,6 +16,9 @@
 /** path **/
 @property(nonatomic,strong)NSString *path;
 
+/** 表 **/
+@property(nonatomic,strong)NSString *tableName;
+
 
 @end
 
@@ -46,13 +49,16 @@ static FriendSQLiteManager *pointer = nil;
         NSLog(@"数据库打开失败");
         return;
     }
-    NSString *str = @"create table if not exists friend(fid integer primary key AUTOINCREMENT,uid text not null ,uname text not null,img text);";
+    NSString *str = [NSString stringWithFormat:@"create table if not exists friend(fid integer primary key AUTOINCREMENT,uid text not null ,uname text not null,img text);"];
     [self.database executeUpdate:str];
 }
 
 // 插入数据
 - (BOOL)insertData:(FriendModel*)model{
     [self createTable];
+    if ([self selectByModel:model]) {
+        return NO;
+    }
     return [self.database executeUpdate:@"INSERT INTO friend (uid,uname,img) VALUES (?,?,?)",model.uid,model.uname,model.img];
 }
 
@@ -70,10 +76,16 @@ static FriendSQLiteManager *pointer = nil;
     return [self.database executeUpdate:@"DELETE FROM friend WHERE fid = ?",@(model.fid)];
 }
 
+// 删除所有数据
+- (BOOL)deleteAllData{
+    [self createTable];
+    return [self.database executeUpdate:@"DELETE FROM friend"];
+}
+
 // 查询所有
 - (NSArray *)selectAllData{
     [self createTable];
-    FMResultSet *rs = [self.database executeQuery:@"SELECT * friend"];
+    FMResultSet *rs = [self.database executeQuery:@"SELECT * FROM friend"];
     NSMutableArray *array = [NSMutableArray array];
     while ([rs next]) {
         FriendModel *model = [FriendModel new];
@@ -86,9 +98,21 @@ static FriendSQLiteManager *pointer = nil;
     return array;
 }
 
+// 查询是否存在
+- (BOOL)selectByModel:(FriendModel*)model{
+    [self createTable];
+    FMResultSet *rs = [self.database executeQuery:@"SELECT * FROM friend WHERE uid = ?",model.uid];
+    BOOL result = NO;
+    while ([rs next]) {
+        result = YES;
+    }
+    return result;
+}
+
 // 查询一条
 - (FriendModel *)selectById:(NSNumber*)fid{
-    FMResultSet *rs = [self.database executeQuery:@"SELECT * friend WHERE fid = ?",fid];
+    [self createTable];
+    FMResultSet *rs = [self.database executeQuery:@"SELECT * FROM friend WHERE fid = ?",fid];
     FriendModel *model = [FriendModel new];
     while ([rs next]) {
         model.fid = [rs intForColumn:@"fid"];
@@ -104,7 +128,7 @@ static FriendSQLiteManager *pointer = nil;
 - (NSString *)path{
     if (!_path) {
         _path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
-        _path = [_path stringByAppendingPathComponent:@"myDB.db"];
+        _path = [_path stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.db",self.tableName]];
     }
     return _path;
 }
@@ -114,6 +138,10 @@ static FriendSQLiteManager *pointer = nil;
         _database = [FMDatabase databaseWithPath:self.path];
     }
     return _database;
+}
+
+- (NSString *)tableName{
+    return [AVUser currentUser].objectId;
 }
 
 @end

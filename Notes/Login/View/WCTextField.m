@@ -12,9 +12,6 @@
 #define heightSpaceing 2
 @interface WCTextField()<UITextFieldDelegate>
 
-//文本框
-@property (nonatomic,strong) UITextField *textField;
-
 //注释
 @property (nonatomic,strong) UILabel *placeholderLabel;
 
@@ -36,13 +33,8 @@ static const CGFloat lineWidth = 1;
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if(self = [super initWithFrame:frame]){
-        _textField = [[UITextField alloc]initWithFrame:CGRectZero];
-        _textField.borderStyle = UITextBorderStyleNone;
-        _textField.font = [UIFont systemFontOfSize:15.f];
-        _textField.textColor = [UIColor whiteColor];
-        _textField.delegate = self;
-        _textField.tintColor = [UIColor whiteColor];
-        [self addSubview:_textField];
+        
+        [self addSubview:self.textField];
         
         _placeholderLabel = [[UILabel alloc]initWithFrame:CGRectZero];
         _placeholderLabel.font = [UIFont systemFontOfSize:13.f];
@@ -144,5 +136,18 @@ static const CGFloat lineWidth = 1;
         _placeholderSelectStateColor = placeholderSelectStateColor;
     }
 }
+
+- (UITextField *)textField{
+    if (!_textField) {
+        _textField = [[UITextField alloc]initWithFrame:CGRectZero];
+        _textField.borderStyle = UITextBorderStyleNone;
+        _textField.font = [UIFont systemFontOfSize:15.f];
+        _textField.textColor = [UIColor whiteColor];
+        _textField.delegate = self;
+        _textField.tintColor = [UIColor whiteColor];
+    }
+    return _textField;
+}
+
 @end
 

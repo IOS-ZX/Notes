@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FriendModel.h"
 
 @interface ChatViewController : UIViewController
+
+/** 用户 **/
+@property(nonatomic,strong)FriendModel *model;
 
 @end

@@ -18,6 +18,11 @@
 
 @interface LoginViewController ()
 
+/** username **/
+@property(nonatomic,strong)WCTextField *nameText;
+/** password **/
+@property(nonatomic,strong)WCTextField *pwd;
+
 @end
 
 @implementation LoginViewController
@@ -31,7 +36,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -47,6 +51,20 @@
         [obj removeFromSuperview];
     }];
 }
+
+- (void)login{
+    NSString *username = self.nameText.textField.text;
+    NSString *password = self.pwd.textField.text;
+    NSLog(@"username:%@,pwd:%@",username,password);
+    [AVUser logInWithUsernameInBackground:username password:password block:^(AVUser *user, NSError *error) {
+        if (error) {
+            NSLog(@"login error:%@",error);
+        } else {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+        }
+    }];
+}
+
 -(void)setUp{
     
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200/414.0*SCREEN_W, 50)];
@@ -64,22 +82,12 @@
     detail.font = [UIFont systemFontOfSize:13.f];
     detail.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:detail];
-    
-    WCTextField *username = [[WCTextField alloc]initWithFrame:CGRectMake(0, 0, (270/414.0)*SCREEN_W, 30/736.0*SCREEN_H)];
-    username.center = CGPointMake(self.view.center.x, 350/736.0*SCREEN_H);
-    username.ly_placeholder = @"用户名";
-    username.tag = 0;
-    [self.view addSubview:username];
-    
-    WCTextField *password = [[WCTextField alloc]initWithFrame:CGRectMake(0, 0, 270/414.0*SCREEN_W, 30/736.0*SCREEN_H)];
-    password.center = CGPointMake(self.view.center.x, username.center.y+60/736.0*SCREEN_H);
-    password.ly_placeholder = @"密码";
-    password.tag = 1;
-    [self.view addSubview:password];
+    [self.view addSubview:self.nameText];
+    [self.view addSubview:self.pwd];
     
     WCButton *login = [[WCButton alloc]initWithFrame:CGRectMake(0, 0, 200/414.0*SCREEN_W, 44/736.0*SCREEN_H)];
     
-    login.center = CGPointMake(self.view.center.x, password.center.y+100/736.0*SCREEN_H);
+    login.center = CGPointMake(self.view.center.x, self.pwd.center.y+100/736.0*SCREEN_H);
     [self.view addSubview:login];
     
     __block WCButton *button = login;
@@ -88,10 +96,7 @@
         NSLog(@"跳转了哦");
         button.bounds = CGRectMake(0, 0, 44, 44);//??
         button.layer.cornerRadius = 22;
-        
-            RootViewController *nextVC = [[RootViewController alloc]init];
-            [self presentViewController:nextVC animated:YES completion:nil];
-        
+        [self login];
     };
 }
 
@@ -104,6 +109,27 @@
     gradientLayer.endPoint = CGPointMake(0.5, 1);
     gradientLayer.locations = @[@0.65,@1];
     return gradientLayer;
+}
+
+
+- (WCTextField *)nameText{
+    if (!_nameText) {
+        _nameText = [[WCTextField alloc]initWithFrame:CGRectMake(0, 0, (270/414.0)*SCREEN_W, 30/736.0*SCREEN_H)];
+        _nameText.center = CGPointMake(self.view.center.x, 350/736.0*SCREEN_H);
+        _nameText.ly_placeholder = @"用户名";
+        _nameText.tag = 0;
+    }
+    return _nameText;
+}
+
+- (WCTextField *)pwd{
+    if (!_pwd) {
+        _pwd = [[WCTextField alloc]initWithFrame:CGRectMake(0, 0, 270/414.0*SCREEN_W, 30/736.0*SCREEN_H)];
+        _pwd.center = CGPointMake(self.view.center.x, self.nameText.center.y+60/736.0*SCREEN_H);
+        _pwd.ly_placeholder = @"密码";
+        _pwd.tag = 1;
+    }
+    return _pwd;
 }
 
 

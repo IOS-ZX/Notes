@@ -62,8 +62,8 @@
     }else{
         SMSViewController *svc = [SMSViewController new];
         [self.navigationController pushViewController:svc animated:YES];
+        self.navigationController.navigationBarHidden = NO;
     }
-    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,4 +10,9 @@
 
 @implementation FriendModel
 
+
+- (NSString *)description{
+    return [NSString stringWithFormat:@"FriendModel:<fid:%@,uid:%@,uname:%@,img:%@",@(self.fid),self.uid,self.uname,self.img];
+}
+
 @end

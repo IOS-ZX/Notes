@@ -113,8 +113,6 @@
     if (!_myselfImageView) {
         _myselfImageView = [[UIImageView alloc] initWithFrame:CRM(SCREEN_WIDTH - 40 - 10, CGRectGetMaxY(self.timeLabel.frame), 40, 40)];
 //        _myselfImageView.backgroundColor = [UIColor redColor];
-        
-        
     }
     return _myselfImageView;
 }
@@ -122,7 +120,7 @@
 - (UIButton *)anotherMessageButton {
     if (!_anotherMessageButton) {
         _anotherMessageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _anotherMessageButton.frame = CRM(CGRectGetMaxX(self.anotherImageView.frame) + 10, CGRectGetMaxY(self.timeLabel.frame), 120, 50);
+        _anotherMessageButton.frame = CRM(CGRectGetMaxX(self.anotherImageView.frame) + 10, CGRectGetMaxY(self.timeLabel.frame), 120, 80);
 //        _anotherMessageButton.backgroundColor = [UIColor yellowColor];
         [_anotherMessageButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _anotherMessageButton.titleLabel.font = [UIFont systemFontOfSize:12];
@@ -137,7 +135,7 @@
 - (UIButton *)myselfMessageButton {
     if (!_myselfMessageButton) {
         _myselfMessageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _myselfMessageButton.frame = CRM(SCREEN_WIDTH - 180, CGRectGetMaxY(self.timeLabel.frame), 120, 50);
+        _myselfMessageButton.frame = CRM(SCREEN_WIDTH - 180, CGRectGetMaxY(self.timeLabel.frame), 120, 80);
 //        _myselfMessageButton.backgroundColor = [UIColor yellowColor];
         [_myselfMessageButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _myselfMessageButton.titleLabel.font = [UIFont systemFontOfSize:12];
