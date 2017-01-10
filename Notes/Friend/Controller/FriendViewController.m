@@ -55,7 +55,7 @@
 
 #pragma mark - 接受消息
 - (void)conversation:(AVIMConversation *)conversation didReceiveTypedMessage:(AVIMTypedMessage *)message {
-    NSLog(@"%@", message.text); // 耗子，起床！
+    NSLog(@"1212%@", message.text); // 耗子，起床！
 }
 
 #pragma mark - tableView dataSource

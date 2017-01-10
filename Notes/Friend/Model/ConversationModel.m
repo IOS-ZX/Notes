@@ -10,4 +10,8 @@
 
 @implementation ConversationModel
 
+- (NSString *)description{
+    return [NSString stringWithFormat:@"cid:%ld,Conversationid:%@,uid:%@",self.cid,self.conversationid,self.uid];
+}
+
 @end

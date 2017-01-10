@@ -33,7 +33,7 @@
 		248570951E20F3CD00189301 /* UIImage+Resizingable.m in Sources */ = {isa = PBXBuildFile; fileRef = 248570921E20F3CD00189301 /* UIImage+Resizingable.m */; };
 		248570981E20F41600189301 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248570971E20F41600189301 /* ChatViewController.m */; };
 		2485709A1E20F50300189301 /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 248570991E20F50300189301 /* messages.plist */; };
-		98C74510FA2E1649D5390779 /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658144778A3B18F09AA48778 /* Pods_Notes.framework */; };
+		DFCE12D199E61A5C6B3EFFFC /* libPods-Notes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3864BB8F91A79D5AA7F5CE32 /* libPods-Notes.a */; };
 		F33830F21E234C14005A4A81 /* Transition.m in Sources */ = {isa = PBXBuildFile; fileRef = F33830ED1E234C14005A4A81 /* Transition.m */; };
 		F33830F31E234C14005A4A81 /* WCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F33830EF1E234C14005A4A81 /* WCButton.m */; };
 		F33830F41E234C14005A4A81 /* WCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F33830F11E234C14005A4A81 /* WCTextField.m */; };
@@ -95,7 +95,7 @@
 		248570991E20F50300189301 /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
 		2485709B1E20F63500189301 /* IracleConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IracleConfig.h; sourceTree = "<group>"; };
 		34D6E0CDD737930FE93EE37F /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
-		658144778A3B18F09AA48778 /* Pods_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3864BB8F91A79D5AA7F5CE32 /* libPods-Notes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Notes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F33830EC1E234C14005A4A81 /* Transition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transition.h; sourceTree = "<group>"; };
 		F33830ED1E234C14005A4A81 /* Transition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transition.m; sourceTree = "<group>"; };
 		F33830EE1E234C14005A4A81 /* WCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCButton.h; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98C74510FA2E1649D5390779 /* Pods_Notes.framework in Frameworks */,
+				DFCE12D199E61A5C6B3EFFFC /* libPods-Notes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				2485707A1E20DA4C00189301 /* SQLite.framework */,
-				658144778A3B18F09AA48778 /* Pods_Notes.framework */,
+				3864BB8F91A79D5AA7F5CE32 /* libPods-Notes.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -379,6 +379,7 @@
 				TargetAttributes = {
 					2455492E1E2095880072BE89 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = CU4JMP378W;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -618,12 +619,13 @@
 			baseConfigurationReference = 34D6E0CDD737930FE93EE37F /* Pods-Notes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CU4JMP378W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Notes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = Notes/Other/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rimi.Notes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CLW.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -633,12 +635,13 @@
 			baseConfigurationReference = 01CD076B913870E11BA83DE9 /* Pods-Notes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CU4JMP378W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Notes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = Notes/Other/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rimi.Notes;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CLW.Notes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

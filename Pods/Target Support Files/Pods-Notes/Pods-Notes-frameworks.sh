@@ -82,26 +82,3 @@ strip_invalid_archs() {
   fi
 }
 
-
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AVOSCloud/AVOSCloud.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/AVOSCloudIM/AVOSCloudIM.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FMDB/FMDB.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MJRefresh/MJRefresh.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/TesseractOCRiOS/TesseractOCR.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/YPTabBarController/YPTabBarController.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/YYText/YYText.framework"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AVOSCloud/AVOSCloud.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/AVOSCloudIM/AVOSCloudIM.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FMDB/FMDB.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MJRefresh/MJRefresh.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SDWebImage/SDWebImage.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/TesseractOCRiOS/TesseractOCR.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/YPTabBarController/YPTabBarController.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/YYText/YYText.framework"
-fi

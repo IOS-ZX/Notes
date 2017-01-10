@@ -90,10 +90,13 @@
     [self.client openWithCallback:^(BOOL succeeded, NSError * _Nullable error) {
         if (self.messages.count > 0) {
             // 根据本地数据获取会话
+            NSLog(@"获取本地会话");
             ConversationModel *model = [[ConversationSQLiteManager sheardManager]selectById:[NSString stringWithFormat:@"%@%@",[AVUser currentUser].objectId,self.model.uid]];
+            NSLog(@"会话:%@",model);
             weakSelf.conversation = [self.client conversationForId:model.uid];
         }else{
             // 创建会话
+            NSLog(@"创建会话");
             [self.client createConversationWithName:self.model.uname clientIds:@[self.model.uid,[AVUser currentUser].objectId] callback:^(AVIMConversation * _Nullable conversation, NSError * _Nullable error) {
                 if (!error) {
                     // 会话创建成功
@@ -114,6 +117,10 @@
 // 发送消息
 - (void)sendMessage:(UIButton*)sender{
     [self updateDataSourceWithType:MessageWhoIsMe text:self.textField.text];
+    if (!self.conversation) {
+        NSLog(@"会话尚未建立");
+        return;
+    }
     [self.conversation sendMessage:[AVIMTextMessage messageWithText:self.textField.text attributes:nil] callback:^(BOOL succeeded, NSError * _Nullable error) {
         if (error) {
             NSLog(@"发送消息错误:%@",error);
