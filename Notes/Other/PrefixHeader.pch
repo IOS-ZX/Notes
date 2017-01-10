@@ -19,10 +19,20 @@
 #import "UIColor+Hex.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "FMDB.h"
+<<<<<<< HEAD
+#import <Masonry/Masonry.h>
+
+#define SCREEN_W self.view.bounds.size.width
+#define SCREEN_H self.view.bounds.size.height
+=======
 #import "UIImageView+WebCache.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
 #import <AVOSCloudIM/AVOSCloudIM.h>
+<<<<<<< HEAD
 #import <TesseractOCR/TesseractOCR.h>
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
 
 #endif /* PrefixHeader_pch */
