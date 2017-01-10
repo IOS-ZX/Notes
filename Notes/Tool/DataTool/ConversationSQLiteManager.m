@@ -109,9 +109,9 @@ static ConversationSQLiteManager *pointer = nil;
 }
 
 // 查询一条
-- (ConversationModel *)selectById:(NSNumber*)cid{
+- (ConversationModel *)selectById:(NSNumber*)uid{
     [self createTable];
-    FMResultSet *rs = [self.database executeQuery:@"SELECT * FROM conversation WHERE cid = ?",cid];
+    FMResultSet *rs = [self.database executeQuery:@"SELECT * FROM conversation WHERE uid = ?",uid];
     ConversationModel *model = [ConversationModel new];
     while ([rs next]) {
         model.cid = [rs intForColumn:@"cid"];

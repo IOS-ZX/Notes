@@ -35,10 +35,13 @@
 }
 
 - (void)initView{
+    __block typeof(self) weakSelf = self;
     self.view.backgroundColor = [UIColor hexColor:@"f1f2f3"];
     [self.tableView registerNib:[UINib nibWithNibName:@"FriendTableViewCell" bundle:nil] forCellReuseIdentifier:@"FriendTableViewCell"];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+    self.tableView.mj_header = [MJRefreshGifHeader headerWithRefreshingBlock:^{
+        [weakSelf requestData];
+    }];
 }
 
 - (void)requestData{
@@ -46,6 +49,7 @@
     [GetUserFriend requestFriendData:^(NSArray *arr) {
         weakSelf.friends = arr;
         [weakSelf.tableView reloadData];
+        [weakSelf.tableView.mj_header endRefreshing];
     }];
 }
 

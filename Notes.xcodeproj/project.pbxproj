@@ -69,6 +69,7 @@
 		245549731E20A9080072BE89 /* NSString+Width.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Width.m"; sourceTree = "<group>"; };
 		245549741E20A9080072BE89 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		245549751E20A9080072BE89 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		247F79711E248D920036E47C /* Notes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notes.entitlements; sourceTree = "<group>"; };
 		2485706C1E20BED400189301 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		2485706E1E20C9B300189301 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		2485706F1E20C9B300189301 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
@@ -143,6 +144,7 @@
 		245549311E2095880072BE89 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				247F79711E248D920036E47C /* Notes.entitlements */,
 				248570991E20F50300189301 /* messages.plist */,
 				2485706C1E20BED400189301 /* tessdata */,
 				F33830E91E234B82005A4A81 /* Login */,
@@ -381,6 +383,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = CU4JMP378W;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -619,6 +626,7 @@
 			baseConfigurationReference = 34D6E0CDD737930FE93EE37F /* Pods-Notes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Notes/Notes.entitlements;
 				DEVELOPMENT_TEAM = CU4JMP378W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Notes/Other/PrefixHeader.pch";
@@ -635,6 +643,7 @@
 			baseConfigurationReference = 01CD076B913870E11BA83DE9 /* Pods-Notes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Notes/Notes.entitlements;
 				DEVELOPMENT_TEAM = CU4JMP378W;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Notes/Other/PrefixHeader.pch";

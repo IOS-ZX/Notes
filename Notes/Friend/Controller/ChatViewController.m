@@ -39,9 +39,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getUserConversation];
     [self initView];
     [self setUpUI];
+    __weak typeof(self) weakSelf = self;
+    [self.client openWithCallback:^(BOOL succeeded, NSError * _Nullable error) {
+        [weakSelf getUserConversation];
+    }];
 }
 
 - (void)initView{
@@ -86,30 +89,45 @@
 
 // 获取用户会话
 - (void)getUserConversation{
-    __weak typeof(self) weakSelf = self;
-    [self.client openWithCallback:^(BOOL succeeded, NSError * _Nullable error) {
-        if (self.messages.count > 0) {
-            // 根据本地数据获取会话
-            NSLog(@"获取本地会话");
-            ConversationModel *model = [[ConversationSQLiteManager sheardManager]selectById:[NSString stringWithFormat:@"%@%@",[AVUser currentUser].objectId,self.model.uid]];
-            NSLog(@"会话:%@",model);
-            weakSelf.conversation = [self.client conversationForId:model.uid];
+    ConversationModel *model = [[ConversationSQLiteManager sheardManager]selectById:[NSString stringWithFormat:@"%@%@",[AVUser currentUser].objectId,self.model.uid]];
+    NSLog(@"会话:%@",model);
+    if (model.conversationid) {
+        // 根据本地数据获取会话
+        NSLog(@"获取本地会话");
+        self.conversation = [self.client conversationForId:model.uid];
+        if (self.conversation) {
+            NSLog(@"会话获取成功");
         }else{
+            NSLog(@"会话获取失败");
             // 创建会话
-            NSLog(@"创建会话");
-            [self.client createConversationWithName:self.model.uname clientIds:@[self.model.uid,[AVUser currentUser].objectId] callback:^(AVIMConversation * _Nullable conversation, NSError * _Nullable error) {
-                if (!error) {
-                    // 会话创建成功
-                    weakSelf.conversation = conversation;
-                    ConversationModel *model = [ConversationModel new];
-                    model.uid = [NSString stringWithFormat:@"%@%@",[AVUser currentUser].objectId,self.model.uid];
-                    model.conversationid = conversation.conversationId;
-                    // 储存会话信息
-                    [[ConversationSQLiteManager sheardManager]insertData:model];
-                }else{
-                    NSLog(@"会话创建失败：%@",error);
-                }
-            }];
+            [self createConversation];
+        }
+    }else{
+        [self createConversation];
+    }
+}
+
+- (void)createConversation{
+    // 创建会话
+    NSLog(@"创建会话");
+    // 打开会话
+    [self.client createConversationWithName:self.model.uname clientIds:@[self.model.uid,[AVUser currentUser].objectId] callback:^(AVIMConversation * _Nullable conversation, NSError * _Nullable error) {
+        if (!error) {
+            // 会话创建成功
+            self.conversation = conversation;
+            ConversationModel *model = [ConversationModel new];
+            model.uid = [NSString stringWithFormat:@"%@%@",[AVUser currentUser].objectId,self.model.uid];
+            model.conversationid = conversation.conversationId;
+            // 储存会话信息
+            BOOL success = [[ConversationSQLiteManager sheardManager]insertData:model];
+            NSLog(@"创建会话成功");
+            if (!success) {
+                NSLog(@"会话储存失败");
+            }else{
+                NSLog(@"会话储存成功");
+            }
+        }else{
+            NSLog(@"会话创建失败：%@",error);
         }
     }];
 }
