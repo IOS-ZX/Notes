@@ -26,8 +26,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.tintColor = [UIColor blueColor];
-    self.navigationController.navigationBar.barTintColor = [UIColor yellowColor];
     self.title = @"手机号登录";
     
 }
@@ -86,7 +84,7 @@
 
 -(void)changeSendButton{
     static NSInteger second = 59;
-    [self.sendButton setTitle:[NSString stringWithFormat:@"%ld秒后重新发送",second] forState:UIControlStateNormal];
+    [self.sendButton setTitle:[NSString stringWithFormat:@"%ld秒后重新发送",(long)second] forState:UIControlStateNormal];
     if (second == 0) {
         [self.sendButton setTitle:@"发送验证码" forState:UIControlStateNormal];
         self.sendButton.userInteractionEnabled = YES;

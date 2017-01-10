@@ -10,4 +10,7 @@
 
 @interface FriendViewController : UITableViewController
 
+/** nav **/
+@property(nonatomic,strong)UINavigationController *nav;
+
 @end

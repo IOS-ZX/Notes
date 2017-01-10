@@ -9,6 +9,9 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#define SCREEN_W [UIScreen mainScreen].bounds.size.width
+#define SCREEN_H [UIScreen mainScreen].bounds.size.height
+
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
@@ -16,9 +19,16 @@
 #import "UIColor+Hex.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "FMDB.h"
+<<<<<<< HEAD
 #import <Masonry/Masonry.h>
 
 #define SCREEN_W self.view.bounds.size.width
 #define SCREEN_H self.view.bounds.size.height
+=======
+#import "UIImageView+WebCache.h"
+#import "Masonry.h"
+#import "MJRefresh.h"
+#import <AVOSCloudIM/AVOSCloudIM.h>
+>>>>>>> origin/master
 
 #endif /* PrefixHeader_pch */

@@ -20,6 +20,9 @@ typedef NS_ENUM(NSInteger, MessageWho) {
 @property (nonatomic, copy) NSString *time;
 @property (nonatomic, assign) MessageWho type;
 @property (nonatomic, assign) CGFloat height;
+@property (nonatomic, copy) NSString *uid;
+@property (nonatomic, assign) NSInteger isSelf;
+@property (nonatomic, assign) NSInteger mid;
 
 +(instancetype)messageWithDic:(NSDictionary *)info;
 

@@ -29,8 +29,9 @@
 }
 
 - (void)initView{
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor hexColor:@"f1f2f3"];
     self.title = @"我";
+<<<<<<< HEAD
     UIBarButtonItem *back = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStyleDone target:self action:@selector(backView:)];
     self.navigationItem.leftBarButtonItem = back;
     UIBarButtonItem *loginOut = [[UIBarButtonItem alloc]initWithTitle:@"退出登录" style:UIBarButtonItemStylePlain target:self action:@selector(LoginOut)];
@@ -51,6 +52,8 @@
 }
 -(void)setHead{
     NSLog(@"设置头像");
+=======
+>>>>>>> origin/master
 }
 
 - (void)backView:(UIBarButtonItem*)item{

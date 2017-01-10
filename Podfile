@@ -3,7 +3,7 @@
 
 target 'Notes' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  use_frameworks!
+  #use_frameworks!
 
   # Pods for Notes
   pod 'YPTabBarController', '~> 2.2.3'
@@ -12,5 +12,7 @@ target 'Notes' do
   pod 'AVOSCloudIM'
   pod 'YYText', '~> 1.0.7'
   pod 'FMDB'
-pod 'Masonry'
+  pod 'Masonry'
+  pod 'MJRefresh'
+  pod 'SDWebImage'
 end

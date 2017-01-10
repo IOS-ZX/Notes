@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		244C84991E2366C800A04F0E /* GetUserFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = 244C84981E2366C800A04F0E /* GetUserFriend.m */; };
+		244C84D21E23AAC000A04F0E /* MessageSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 244C84D11E23AAC000A04F0E /* MessageSQLiteManager.m */; };
+		244C84D51E23B16F00A04F0E /* ConversationSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 244C84D41E23B16F00A04F0E /* ConversationSQLiteManager.m */; };
+		244C84D81E23B28100A04F0E /* ConversationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 244C84D71E23B28100A04F0E /* ConversationModel.m */; };
 		2455493D1E2095890072BE89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2455493B1E2095890072BE89 /* Main.storyboard */; };
 		2455493F1E2095890072BE89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2455493E1E2095890072BE89 /* Assets.xcassets */; };
 		245549421E2095890072BE89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 245549401E2095890072BE89 /* LaunchScreen.storyboard */; };
@@ -29,7 +33,7 @@
 		248570951E20F3CD00189301 /* UIImage+Resizingable.m in Sources */ = {isa = PBXBuildFile; fileRef = 248570921E20F3CD00189301 /* UIImage+Resizingable.m */; };
 		248570981E20F41600189301 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248570971E20F41600189301 /* ChatViewController.m */; };
 		2485709A1E20F50300189301 /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 248570991E20F50300189301 /* messages.plist */; };
-		98C74510FA2E1649D5390779 /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658144778A3B18F09AA48778 /* Pods_Notes.framework */; };
+		DFCE12D199E61A5C6B3EFFFC /* libPods-Notes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3864BB8F91A79D5AA7F5CE32 /* libPods-Notes.a */; };
 		F33830F21E234C14005A4A81 /* Transition.m in Sources */ = {isa = PBXBuildFile; fileRef = F33830ED1E234C14005A4A81 /* Transition.m */; };
 		F33830F31E234C14005A4A81 /* WCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F33830EF1E234C14005A4A81 /* WCButton.m */; };
 		F33830F41E234C14005A4A81 /* WCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F33830F11E234C14005A4A81 /* WCTextField.m */; };
@@ -43,6 +47,14 @@
 
 /* Begin PBXFileReference section */
 		01CD076B913870E11BA83DE9 /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
+		244C84971E2366C800A04F0E /* GetUserFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUserFriend.h; sourceTree = "<group>"; };
+		244C84981E2366C800A04F0E /* GetUserFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetUserFriend.m; sourceTree = "<group>"; };
+		244C84D01E23AAC000A04F0E /* MessageSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageSQLiteManager.h; sourceTree = "<group>"; };
+		244C84D11E23AAC000A04F0E /* MessageSQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageSQLiteManager.m; sourceTree = "<group>"; };
+		244C84D31E23B16F00A04F0E /* ConversationSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationSQLiteManager.h; sourceTree = "<group>"; };
+		244C84D41E23B16F00A04F0E /* ConversationSQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationSQLiteManager.m; sourceTree = "<group>"; };
+		244C84D61E23B28100A04F0E /* ConversationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationModel.h; sourceTree = "<group>"; };
+		244C84D71E23B28100A04F0E /* ConversationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationModel.m; sourceTree = "<group>"; };
 		2455492F1E2095880072BE89 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2455493C1E2095890072BE89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2455493E1E2095890072BE89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -60,6 +72,7 @@
 		245549731E20A9080072BE89 /* NSString+Width.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Width.m"; sourceTree = "<group>"; };
 		245549741E20A9080072BE89 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
 		245549751E20A9080072BE89 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		247F79711E248D920036E47C /* Notes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Notes.entitlements; sourceTree = "<group>"; };
 		2485706C1E20BED400189301 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		2485706E1E20C9B300189301 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		2485706F1E20C9B300189301 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
@@ -86,7 +99,7 @@
 		248570991E20F50300189301 /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
 		2485709B1E20F63500189301 /* IracleConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IracleConfig.h; sourceTree = "<group>"; };
 		34D6E0CDD737930FE93EE37F /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
-		658144778A3B18F09AA48778 /* Pods_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3864BB8F91A79D5AA7F5CE32 /* libPods-Notes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Notes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F33830EC1E234C14005A4A81 /* Transition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transition.h; sourceTree = "<group>"; };
 		F33830ED1E234C14005A4A81 /* Transition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transition.m; sourceTree = "<group>"; };
 		F33830EE1E234C14005A4A81 /* WCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCButton.h; sourceTree = "<group>"; };
@@ -112,7 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98C74510FA2E1649D5390779 /* Pods_Notes.framework in Frameworks */,
+				DFCE12D199E61A5C6B3EFFFC /* libPods-Notes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +153,10 @@
 		245549311E2095880072BE89 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				F33830E91E234B82005A4A81 /* Login */,
+				247F79711E248D920036E47C /* Notes.entitlements */,
 				248570991E20F50300189301 /* messages.plist */,
 				2485706C1E20BED400189301 /* tessdata */,
+				F33830E91E234B82005A4A81 /* Login */,
 				2455496B1E209BC00072BE89 /* Friend */,
 				245549591E2098E00072BE89 /* Extenstion */,
 				2455495B1E2098E00072BE89 /* Main */,
@@ -249,6 +263,10 @@
 			children = (
 				248570771E20DA1300189301 /* FriendSQLiteManager.h */,
 				248570781E20DA1300189301 /* FriendSQLiteManager.m */,
+				244C84D01E23AAC000A04F0E /* MessageSQLiteManager.h */,
+				244C84D11E23AAC000A04F0E /* MessageSQLiteManager.m */,
+				244C84D31E23B16F00A04F0E /* ConversationSQLiteManager.h */,
+				244C84D41E23B16F00A04F0E /* ConversationSQLiteManager.m */,
 			);
 			path = DataTool;
 			sourceTree = "<group>";
@@ -260,6 +278,8 @@
 				2485707E1E20E1FC00189301 /* FriendViewController.m */,
 				248570961E20F41600189301 /* ChatViewController.h */,
 				248570971E20F41600189301 /* ChatViewController.m */,
+				244C84971E2366C800A04F0E /* GetUserFriend.h */,
+				244C84981E2366C800A04F0E /* GetUserFriend.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -269,6 +289,8 @@
 			children = (
 				248570821E20E21D00189301 /* FriendModel.h */,
 				248570831E20E21D00189301 /* FriendModel.m */,
+				244C84D61E23B28100A04F0E /* ConversationModel.h */,
+				244C84D71E23B28100A04F0E /* ConversationModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,7 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				2485707A1E20DA4C00189301 /* SQLite.framework */,
-				658144778A3B18F09AA48778 /* Pods_Notes.framework */,
+				3864BB8F91A79D5AA7F5CE32 /* libPods-Notes.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -432,6 +454,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = CU4JMP378W;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -523,10 +550,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				245549661E2098E00072BE89 /* RootViewController.m in Sources */,
+				244C84D51E23B16F00A04F0E /* ConversationSQLiteManager.m in Sources */,
 				245549691E2098E00072BE89 /* main.m in Sources */,
 				245549761E20A9080072BE89 /* NSString+Width.m in Sources */,
+				244C84D21E23AAC000A04F0E /* MessageSQLiteManager.m in Sources */,
 				F33830F21E234C14005A4A81 /* Transition.m in Sources */,
 				F33830FB1E234C1C005A4A81 /* LoginViewController.m in Sources */,
+				244C84991E2366C800A04F0E /* GetUserFriend.m in Sources */,
 				245549671E2098E00072BE89 /* AppDelegate.m in Sources */,
 				F338310E1E2385D4005A4A81 /* SecondInterfaceViewController.m in Sources */,
 				245549771E20A9080072BE89 /* UIColor+Hex.m in Sources */,
@@ -537,6 +567,7 @@
 				248570731E20CD7C00189301 /* BaseNavigationController.m in Sources */,
 				2485708B1E20E7C600189301 /* FriendTableViewCell.m in Sources */,
 				248570701E20C9B300189301 /* MeViewController.m in Sources */,
+				244C84D81E23B28100A04F0E /* ConversationModel.m in Sources */,
 				248570811E20E1FC00189301 /* FriendViewController.m in Sources */,
 				248570951E20F3CD00189301 /* UIImage+Resizingable.m in Sources */,
 				2455496E1E209C310072BE89 /* RecordViewController.m in Sources */,
@@ -669,9 +700,14 @@
 			baseConfigurationReference = 34D6E0CDD737930FE93EE37F /* Pods-Notes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CU4JMP378W;
 				ENABLE_BITCODE = NO;
+=======
+				CODE_SIGN_ENTITLEMENTS = Notes/Notes.entitlements;
+				DEVELOPMENT_TEAM = CU4JMP378W;
+>>>>>>> origin/master
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Notes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = Notes/Other/Info.plist;
@@ -687,9 +723,14 @@
 			baseConfigurationReference = 01CD076B913870E11BA83DE9 /* Pods-Notes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+<<<<<<< HEAD
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CU4JMP378W;
 				ENABLE_BITCODE = NO;
+=======
+				CODE_SIGN_ENTITLEMENTS = Notes/Notes.entitlements;
+				DEVELOPMENT_TEAM = CU4JMP378W;
+>>>>>>> origin/master
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Notes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = Notes/Other/Info.plist;

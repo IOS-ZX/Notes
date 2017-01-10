@@ -10,6 +10,7 @@
 #import "FriendViewController.h"
 #import "RecordViewController.h"
 #import "MeViewController.h"
+#import "WelcomeViewController.h"
 #import "BaseNavigationController.h"
 
 @interface RootViewController ()
@@ -29,8 +30,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self checkLogin];
     [self initView];
     [self makeContentView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +45,16 @@
 }
 
 #pragma mark - 自定义方法
+
+// 检查登录状态
+- (void)checkLogin{
+    AVUser *user = [AVUser currentUser];
+    if (user == nil) {
+        NSLog(@"user:%@",user.username);
+        WelcomeViewController *welcome = [WelcomeViewController new];
+        [self.navigationController pushViewController:welcome animated:YES];
+    }
+}
 
 - (void)initView{
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
@@ -60,17 +77,19 @@
     [self.tabBar addSubview:self.settingBtn];
     [self.tabBar addSubview:self.refreshBtn];
     [self.tabBar addSubview:self.searchBtn];
-    
-    [self.navigationController.navigationBar setBarTintColor:[UIColor hexColor:@"00CCFF"]];
 }
 
 - (void)makeContentView{
     FriendViewController *friend = [[FriendViewController alloc]init];
     friend.yp_tabItemTitle = @"笔友";
+    friend.nav = self.navigationController;
     
     RecordViewController *record = [[RecordViewController alloc]init];
     record.yp_tabItemTitle = @"笔记";
-
+    
+//    LCCKContactListViewController *firstViewController = [[LCCKContactListViewController alloc] init];
+//    firstViewController.yp_tabItemTitle = @"笔友";
+    
     self.viewControllers = [NSMutableArray arrayWithObjects:record, friend, nil];
 }
 
@@ -79,8 +98,9 @@
 // 设置按钮
 - (void)goToSettingPage{
     MeViewController *me = [MeViewController new];
-    BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:me];
-    [self presentViewController:nav animated:YES completion:nil];
+//    BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:me];
+//    [self presentViewController:nav animated:YES completion:nil];
+    [self.navigationController pushViewController:me animated:YES];
 }
 
 // 刷新按钮
