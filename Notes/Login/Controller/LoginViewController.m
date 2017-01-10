@@ -12,10 +12,6 @@
 #import "WCButton.h"
 #import "RootViewController.h"
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 // plus 屏幕宽 414  屏幕高  736
 
 @interface LoginViewController ()
