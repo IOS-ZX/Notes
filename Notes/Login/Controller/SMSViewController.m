@@ -19,8 +19,7 @@
 @property(nonatomic,strong)UITextField *YZMField;
 
 @end
-#define SCREEN_W self.view.bounds.size.width
-#define SCREEN_H self.view.bounds.size.height
+
 // plus 屏幕宽 414  屏幕高  736
 
 @implementation SMSViewController

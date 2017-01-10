@@ -16,6 +16,9 @@
 #import "UIColor+Hex.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "FMDB.h"
-#import "Masonry.h"
+#import <Masonry/Masonry.h>
+
+#define SCREEN_W self.view.bounds.size.width
+#define SCREEN_H self.view.bounds.size.height
 
 #endif /* PrefixHeader_pch */
