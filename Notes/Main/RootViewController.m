@@ -53,7 +53,17 @@
         NSLog(@"user:%@",user.username);
         WelcomeViewController *welcome = [WelcomeViewController new];
         [self.navigationController pushViewController:welcome animated:YES];
+    }else{
+        TIMLoginParam *login = [[TIMLoginParam alloc]init];
+        login.accountType = @"8312";
+        login.identifier = user.username;
+        login.sdkAppId = 1400023453;
+        login.appidAt3rd = [NSString stringWithFormat:@"%d",1400023453];
     }
+}
+
+- (void)IMLogin{
+    
 }
 
 - (void)initView{

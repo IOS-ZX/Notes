@@ -89,6 +89,7 @@
     FriendModel *model = self.friends[indexPath.row];
     ChatViewController *chat = [ChatViewController new];
     chat.model = model;
+    chat.client = self.client;
     BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:chat];
     [self presentViewController:nav animated:YES completion:nil];
 }
@@ -106,6 +107,9 @@
     if (!_client) {
         _client = [[AVIMClient alloc]initWithClientId:[AVUser currentUser].objectId];
         _client.delegate = self;
+        [_client openWithCallback:^(BOOL succeeded, NSError * _Nullable error) {
+            
+        }];
     }
     return _client;
 }

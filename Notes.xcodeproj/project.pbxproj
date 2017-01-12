@@ -24,6 +24,12 @@
 		247F79C21E24D5610036E47C /* MainNotesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247F79C01E24D5610036E47C /* MainNotesCell.m */; };
 		247F79C31E24D5610036E47C /* MainNotesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247F79C11E24D5610036E47C /* MainNotesCell.xib */; };
 		247F79C61E24DA760036E47C /* MainTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 247F79C51E24DA760036E47C /* MainTableHeaderView.m */; };
+		247F79C91E24FC9C0036E47C /* CreateTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247F79C81E24FC9C0036E47C /* CreateTextController.m */; };
+		247F79CC1E24FD740036E47C /* CreateImageWithTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247F79CB1E24FD740036E47C /* CreateImageWithTextController.m */; };
+		247F79CF1E24FDA50036E47C /* CreateRecordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247F79CE1E24FDA50036E47C /* CreateRecordController.m */; };
+		247F79D21E24FDDA0036E47C /* CreateRemindController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247F79D11E24FDDA0036E47C /* CreateRemindController.m */; };
+		247F79D51E25B9E50036E47C /* NotesSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 247F79D41E25B9E50036E47C /* NotesSQLiteManager.m */; };
+		247F79D81E25BA0B0036E47C /* RecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 247F79D71E25BA0B0036E47C /* RecordModel.m */; };
 		2485706D1E20BED400189301 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 2485706C1E20BED400189301 /* tessdata */; };
 		248570701E20C9B300189301 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2485706F1E20C9B300189301 /* MeViewController.m */; };
 		248570731E20CD7C00189301 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248570721E20CD7C00189301 /* BaseNavigationController.m */; };
@@ -81,6 +87,23 @@
 		247F79C11E24D5610036E47C /* MainNotesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainNotesCell.xib; sourceTree = "<group>"; };
 		247F79C41E24DA760036E47C /* MainTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableHeaderView.h; sourceTree = "<group>"; };
 		247F79C51E24DA760036E47C /* MainTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableHeaderView.m; sourceTree = "<group>"; };
+		247F79C71E24FC9C0036E47C /* CreateTextController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTextController.h; sourceTree = "<group>"; };
+		247F79C81E24FC9C0036E47C /* CreateTextController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTextController.m; sourceTree = "<group>"; };
+		247F79CA1E24FD740036E47C /* CreateImageWithTextController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateImageWithTextController.h; sourceTree = "<group>"; };
+		247F79CB1E24FD740036E47C /* CreateImageWithTextController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateImageWithTextController.m; sourceTree = "<group>"; };
+		247F79CD1E24FDA50036E47C /* CreateRecordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateRecordController.h; sourceTree = "<group>"; };
+		247F79CE1E24FDA50036E47C /* CreateRecordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateRecordController.m; sourceTree = "<group>"; };
+		247F79D01E24FDDA0036E47C /* CreateRemindController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateRemindController.h; sourceTree = "<group>"; };
+		247F79D11E24FDDA0036E47C /* CreateRemindController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateRemindController.m; sourceTree = "<group>"; };
+		247F79D31E25B9E50036E47C /* NotesSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesSQLiteManager.h; sourceTree = "<group>"; };
+		247F79D41E25B9E50036E47C /* NotesSQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesSQLiteManager.m; sourceTree = "<group>"; };
+		247F79D61E25BA0B0036E47C /* RecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordModel.h; sourceTree = "<group>"; };
+		247F79D71E25BA0B0036E47C /* RecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordModel.m; sourceTree = "<group>"; };
+		247F79E61E2601E00036E47C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		247F79E81E2601EA0036E47C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		247F79EA1E26020B0036E47C /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		247F79EC1E2602180036E47C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		247F79EE1E2602270036E47C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		2485706C1E20BED400189301 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		2485706E1E20C9B300189301 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		2485706F1E20C9B300189301 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
@@ -259,6 +282,14 @@
 			children = (
 				247F79B61E24CE440036E47C /* RecordViewController.h */,
 				247F79B71E24CE440036E47C /* RecordViewController.m */,
+				247F79C71E24FC9C0036E47C /* CreateTextController.h */,
+				247F79C81E24FC9C0036E47C /* CreateTextController.m */,
+				247F79CA1E24FD740036E47C /* CreateImageWithTextController.h */,
+				247F79CB1E24FD740036E47C /* CreateImageWithTextController.m */,
+				247F79CD1E24FDA50036E47C /* CreateRecordController.h */,
+				247F79CE1E24FDA50036E47C /* CreateRecordController.m */,
+				247F79D01E24FDDA0036E47C /* CreateRemindController.h */,
+				247F79D11E24FDDA0036E47C /* CreateRemindController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,6 +297,8 @@
 		247F79B81E24CE440036E47C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				247F79D61E25BA0B0036E47C /* RecordModel.h */,
+				247F79D71E25BA0B0036E47C /* RecordModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,6 +333,8 @@
 				244C84D11E23AAC000A04F0E /* MessageSQLiteManager.m */,
 				244C84D31E23B16F00A04F0E /* ConversationSQLiteManager.h */,
 				244C84D41E23B16F00A04F0E /* ConversationSQLiteManager.m */,
+				247F79D31E25B9E50036E47C /* NotesSQLiteManager.h */,
+				247F79D41E25B9E50036E47C /* NotesSQLiteManager.m */,
 			);
 			path = DataTool;
 			sourceTree = "<group>";
@@ -347,6 +382,11 @@
 		6BEDA7D00B45D9121F741E2A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				247F79EE1E2602270036E47C /* libsqlite3.tbd */,
+				247F79EC1E2602180036E47C /* libz.tbd */,
+				247F79EA1E26020B0036E47C /* libc++.tbd */,
+				247F79E81E2601EA0036E47C /* SystemConfiguration.framework */,
+				247F79E61E2601E00036E47C /* CoreTelephony.framework */,
 				2485707A1E20DA4C00189301 /* SQLite.framework */,
 				3864BB8F91A79D5AA7F5CE32 /* libPods-Notes.a */,
 			);
@@ -529,6 +569,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				247F79CC1E24FD740036E47C /* CreateImageWithTextController.m in Sources */,
+				247F79D51E25B9E50036E47C /* NotesSQLiteManager.m in Sources */,
 				245549661E2098E00072BE89 /* RootViewController.m in Sources */,
 				244C84D51E23B16F00A04F0E /* ConversationSQLiteManager.m in Sources */,
 				245549691E2098E00072BE89 /* main.m in Sources */,
@@ -538,13 +580,16 @@
 				F33830FB1E234C1C005A4A81 /* LoginViewController.m in Sources */,
 				244C84991E2366C800A04F0E /* GetUserFriend.m in Sources */,
 				247F79C21E24D5610036E47C /* MainNotesCell.m in Sources */,
+				247F79CF1E24FDA50036E47C /* CreateRecordController.m in Sources */,
 				245549671E2098E00072BE89 /* AppDelegate.m in Sources */,
 				245549771E20A9080072BE89 /* UIColor+Hex.m in Sources */,
 				248570941E20F3CD00189301 /* MessageCell.m in Sources */,
 				248570791E20DA1300189301 /* FriendSQLiteManager.m in Sources */,
 				F33830F41E234C14005A4A81 /* WCTextField.m in Sources */,
+				247F79D21E24FDDA0036E47C /* CreateRemindController.m in Sources */,
 				248570731E20CD7C00189301 /* BaseNavigationController.m in Sources */,
 				2485708B1E20E7C600189301 /* FriendTableViewCell.m in Sources */,
+				247F79D81E25BA0B0036E47C /* RecordModel.m in Sources */,
 				248570701E20C9B300189301 /* MeViewController.m in Sources */,
 				244C84D81E23B28100A04F0E /* ConversationModel.m in Sources */,
 				247F79C61E24DA760036E47C /* MainTableHeaderView.m in Sources */,
@@ -558,6 +603,7 @@
 				F33830F31E234C14005A4A81 /* WCButton.m in Sources */,
 				248570981E20F41600189301 /* ChatViewController.m in Sources */,
 				248570841E20E21D00189301 /* FriendModel.m in Sources */,
+				247F79C91E24FC9C0036E47C /* CreateTextController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +728,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Notes/Notes.entitlements;
 				DEVELOPMENT_TEAM = CU4JMP378W;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Notes/Other/Lib",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Notes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = Notes/Other/Info.plist;
@@ -699,6 +750,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Notes/Notes.entitlements;
 				DEVELOPMENT_TEAM = CU4JMP378W;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Notes/Other/Lib",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Notes/Other/PrefixHeader.pch";
 				INFOPLIST_FILE = Notes/Other/Info.plist;

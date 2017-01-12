@@ -24,10 +24,6 @@
     self.title = @"我";
 }
 
-- (void)backView:(UIBarButtonItem*)item{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO];

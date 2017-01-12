@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *time;
 @property (strong, nonatomic) IBOutlet UILabel *title;
 @property (strong, nonatomic) IBOutlet UIView *bottomLine;
+@property (strong, nonatomic) IBOutlet UILabel *temp;
 
 @end

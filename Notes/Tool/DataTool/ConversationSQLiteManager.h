@@ -22,6 +22,9 @@
 // 删除所有数据
 - (BOOL)deleteAllData;
 
+// 查询所有
+- (NSArray *)selectAllData;
+
 // 查询一条
 - (ConversationModel *)selectById:(NSString*)uid;
 

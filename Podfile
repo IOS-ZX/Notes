@@ -15,4 +15,6 @@ target 'Notes' do
   pod 'Masonry'
   pod 'MJRefresh'
   pod 'SDWebImage'
+  #Lite版本
+  pod 'HyphenateLite'
 end

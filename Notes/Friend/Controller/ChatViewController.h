@@ -11,6 +11,9 @@
 
 @interface ChatViewController : UIViewController
 
+/** client **/
+@property(nonatomic,strong)AVIMClient *client;
+
 /** 用户 **/
 @property(nonatomic,strong)FriendModel *model;
 

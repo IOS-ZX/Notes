@@ -9,6 +9,11 @@
 #import "RecordViewController.h"
 #import "MainNotesCell.h"
 #import "MainTableHeaderView.h"
+#import "CreateTextController.h"
+#import "CreateRecordController.h"
+#import "CreateRemindController.h"
+#import "CreateImageWithTextController.h"
+#import "NotesSQLiteManager.h"
 
 @interface RecordViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -20,6 +25,12 @@
 
 /** 按钮数组 **/
 @property(nonatomic,strong)NSMutableArray *btns;
+
+/** 遮罩层 **/
+@property(nonatomic,strong)UIView *maskView;
+
+/** 数据 **/
+@property(nonatomic,strong)NSArray *dataSource;
 
 @end
 
@@ -34,6 +45,11 @@
 - (void)initView{
     self.view.backgroundColor = [UIColor hexColor:@"f1f2f3"];
 //    self.tableView.tableHeaderView = [MainTableHeaderView new];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self reloadDatas];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,34 +72,83 @@
         make.bottom.equalTo(weakSelf.view.mas_bottom).offset(-30);
         make.right.equalTo(weakSelf.view.mas_right).offset(-20);
     }];
+    [self.view layoutIfNeeded];
 }
 
 /** 添加按钮点击事件 **/
 - (void)addNotes:(UIButton*)sender{
     __weak typeof(self) weakSelf = self;
+//    self.maskView.hidden = !self.maskView.hidden;
     [self.btns enumerateObjectsUsingBlock:^(UIButton * _Nonnull btn, NSUInteger idx, BOOL * _Nonnull stop) {
-        [NSTimer scheduledTimerWithTimeInterval:0.2 repeats:NO block:^(NSTimer * _Nonnull timer) {
-            [weakSelf btnStartAnim:btn];
-        }];
+        [weakSelf btnStartAnim:btn];
     }];
 }
 
 /** 其他按钮点击事件 **/
 - (void)btnClicks:(UIButton*)sender{
     NSLog(@"click:%ld",sender.tag);
+    switch (sender.tag - 1000) {
+        case 0:
+            // 文字
+        {
+            CreateTextController *text = [CreateTextController new];
+            BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:text];
+            [self presentViewController:nav animated:YES completion:nil];
+        }
+            break;
+        case 1:
+            // 图片
+        {
+            CreateImageWithTextController *image = [CreateImageWithTextController new];
+            BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:image];
+            [self presentViewController:nav animated:YES completion:nil];
+        }
+
+            break;
+        case 2:
+            // 录音
+        {
+            CreateRecordController *record = [CreateRecordController new];
+            BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:record];
+            [self presentViewController:nav animated:YES completion:nil];
+        }
+
+            break;
+        case 3:
+            // 提醒
+        {
+            CreateRemindController *remind = [CreateRemindController new];
+            BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:remind];
+            [self presentViewController:nav animated:YES completion:nil];
+        }
+
+            break;
+            
+        default:
+            break;
+    }
+    [self addNotes:self.addBtn];
 }
 
 /** 动画 **/
 - (void)btnStartAnim:(UIButton*)btn{
-    if (btn.center.y > SCREEN_W) {
-        [UIView animateWithDuration:0.5 animations:^{
-            btn.center = CGPointMake(SCREEN_W - 60, btn.center.y);
+    CGFloat time = 0.5 + (btn.tag - 1000) * 0.09;
+    if (btn.center.x > SCREEN_W) {
+        [UIView animateWithDuration:time animations:^{
+            btn.center = CGPointMake(self.addBtn.center.x, btn.center.y);
         }];
     }else{
-        [UIView animateWithDuration:0.5 animations:^{
+        time = 0.8 - (btn.tag - 1000) * 0.09;
+        [UIView animateWithDuration:time animations:^{
             btn.center = CGPointMake(SCREEN_W + 40, btn.center.y);
         }];
     }
+}
+
+/** 重新加载数据 **/
+- (void)reloadDatas{
+    self.dataSource = [[NotesSQLiteManager sheardManager]selectAllData];
+    [self.tableView reloadData];
 }
 
 #pragma mark - tableView dataSource
@@ -93,7 +158,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return self.dataSource.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -110,9 +175,15 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MainNotesCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainNotesCell" forIndexPath:indexPath];
-    cell.title.text = @"这是一个标题";
-    cell.time.text = @"2017/01/09";
+    RecordModel *model = self.dataSource[indexPath.row];
+    cell.title.text = model.title;
+    cell.time.text = model.date;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (model.isTemp == 1) {
+        cell.temp.text = @"[草稿]";
+    }else{
+        cell.temp.text = @"";
+    }
     return cell;
 }
 
@@ -158,6 +229,9 @@
         for (NSInteger index = 0; index < 4; index ++) {
             UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_W + 40, self.addBtn.frame.origin.y - (index + 1) * 60, 40, 40)];
             btn.tag = 1000 + index;
+            btn.layer.cornerRadius = 20;
+            btn.layer.masksToBounds = YES;
+            btn.backgroundColor = [UIColor whiteColor];
             [btn setImage:[UIImage imageNamed:images[index]] forState:UIControlStateNormal];
             [btn addTarget:self action:@selector(btnClicks:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview:btn];
@@ -165,6 +239,24 @@
         }
     }
     return _btns;
+}
+
+- (UIView *)maskView{
+    if (!_maskView) {
+        _maskView = [[UIView alloc]initWithFrame:self.view.bounds];
+        _maskView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+        _maskView.hidden = YES;
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        [window addSubview:_maskView];
+    }
+    return _maskView;
+}
+
+- (NSArray *)dataSource{
+    if (!_dataSource) {
+        _dataSource = [NSArray array];
+    }
+    return _dataSource;
 }
 
 @end

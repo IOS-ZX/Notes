@@ -57,7 +57,7 @@ static ConversationSQLiteManager *pointer = nil;
 - (BOOL)insertData:(ConversationModel*)model{
     [self createTable];
     if ([self selectByModel:model]) {
-        return NO;
+        return [self updateData:model];
     }
     return [self.database executeUpdate:@"INSERT INTO conversation (uid,conversationid) VALUES (?,?)",model.uid,model.conversationid];
 }
@@ -100,7 +100,7 @@ static ConversationSQLiteManager *pointer = nil;
 // 查询是否存在
 - (BOOL)selectByModel:(ConversationModel*)model{
     [self createTable];
-    FMResultSet *rs = [self.database executeQuery:@"SELECT * FROM conversation WHERE uid = ? AND conversationid = ?",model.uid,model.conversationid];
+    FMResultSet *rs = [self.database executeQuery:@"SELECT * FROM conversation WHERE uid = ?",model.uid];
     BOOL result = NO;
     while ([rs next]) {
         result = YES;

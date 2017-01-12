@@ -22,6 +22,14 @@
     [AVOSCloud setAllLogsEnabled:NO];
     // 初始化LeanCloud
     [AVOSCloud setApplicationId:@"mqAp0pG4arfinRa7f0OFSpnm-gzGzoHsz" clientKey:@"d5VqY4bxtfaeQLqTQVhG54XI"];
+    // 初始化TIM
+//    [[TIMManager sharedInstance]initSdk:1400023453];
+    //AppKey:注册的AppKey，详细见下面注释。
+    //apnsCertName:推送证书名（不需要加后缀），详细见下面注释。
+    EMOptions *options = [EMOptions optionsWithAppkey:@"1132170112178919#notes"];
+    options.apnsCertName = @"notes";
+    [[EMClient sharedClient] initializeSDKWithOptions:options];
+    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     RootViewController *rootVC = [RootViewController new];
     BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:rootVC];
@@ -39,13 +47,14 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    // APP 进入后台
+    [[EMClient sharedClient] applicationDidEnterBackground:application];
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    // APP 将要从后台返回
+    [[EMClient sharedClient] applicationWillEnterForeground:application];
 }
 
 

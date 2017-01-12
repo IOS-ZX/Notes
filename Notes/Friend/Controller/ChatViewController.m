@@ -28,7 +28,7 @@
 @property(nonatomic,strong)UIButton *send;
 
 /** client **/
-@property(nonatomic,strong)AVIMClient *client;
+//@property(nonatomic,strong)AVIMClient *client;
 
 /** 会话 **/
 @property(nonatomic,strong)AVIMConversation *conversation;
@@ -45,6 +45,7 @@
     [self.client openWithCallback:^(BOOL succeeded, NSError * _Nullable error) {
         [weakSelf getUserConversation];
     }];
+    NSLog(@"所有会话：%@",[[ConversationSQLiteManager sheardManager]selectAllData]);
 }
 
 - (void)initView{
@@ -95,13 +96,23 @@
         // 根据本地数据获取会话
         NSLog(@"获取本地会话");
         self.conversation = [self.client conversationForId:model.uid];
-        if (self.conversation) {
-            NSLog(@"会话获取成功");
-        }else{
-            NSLog(@"会话获取失败");
-            // 创建会话
-            [self createConversation];
-        }
+        __weak typeof(self) weakSelf = self;
+        AVIMConversationQuery *query = [self.client conversationQuery];
+        [query whereKey:@"name" equalTo:self.model.uname];
+        [query findConversationsWithCallback:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+//            AVIMConversation *con = 
+            NSLog(@"con:%@",objects);
+        }];
+//        [query getConversationById:@"551260efe4b01608686c3e0f" callback:^(AVIMConversation *conversation, NSError *error) {
+//            weakSelf.conversation = conversation;
+//            if (!error) {
+//                NSLog(@"会话获取成功");
+//            }else{
+//                NSLog(@"会话获取失败:%@",error);
+//                // 创建会话
+//                [self createConversation];
+//            }
+//        }];
     }else{
         [self createConversation];
     }
@@ -120,7 +131,7 @@
             model.conversationid = conversation.conversationId;
             // 储存会话信息
             BOOL success = [[ConversationSQLiteManager sheardManager]insertData:model];
-            NSLog(@"创建会话成功");
+            NSLog(@"创建会话成功:%@",conversation.conversationId);
             if (!success) {
                 NSLog(@"会话储存失败");
             }else{
@@ -232,13 +243,13 @@
     return _send;
 }
 
-- (AVIMClient *)client{
-    if (!_client) {
-        _client = [[AVIMClient alloc]initWithClientId:[AVUser currentUser].objectId];
-        _client.delegate = self;
-    }
-    return _client;
-}
+//- (AVIMClient *)client{
+//    if (!_client) {
+//        _client = [AVIMClient defaultClient];
+//        _client.delegate = self;
+//    }
+//    return _client;
+//}
 
 - (AVIMConversation *)conversation{
     if (!_conversation) {
